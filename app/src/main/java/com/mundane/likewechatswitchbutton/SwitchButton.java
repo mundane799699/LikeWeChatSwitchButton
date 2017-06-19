@@ -3,6 +3,7 @@ package com.mundane.likewechatswitchbutton;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -199,7 +200,7 @@ public class SwitchButton extends View implements View.OnClickListener {
 			}
 		});
 
-		ValueAnimator color = ValueAnimator.ofObject(new ColorEvaluator(), startColor, endColor);
+		ValueAnimator color = ValueAnimator.ofObject(new ArgbEvaluator(), startColor, endColor);
 		color.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
